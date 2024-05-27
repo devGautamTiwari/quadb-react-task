@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html, body {
+        height: 100vh;
+    }
+    body {
+        background: hsl(155, 94%, 10%);
+        background-size: cover;
+        background-attachment: fixed;
+        color: #eee
+    }
+
+    #root {
+        min-height: 100%;
+    }
+}
+
+@layer components {
+    .button {
+        @apply text-neutral-800 bg-neutral-100 font-bold py-2 px-4;
+    }
+}
