@@ -5,12 +5,12 @@ interface TaskInputProps {
 
 function TaskInput({ onAdd }: TaskInputProps) {
     const handleSubmit = (event: React.FormEvent) => {
-        event.preventDefault();
-        const form = event.target as HTMLFormElement;
-        const input = form.elements.namedItem("new-task") as HTMLInputElement;
-        if (!input.value.trim()) return;
-        onAdd(input.value.trim());
-        input.value = "";
+        event.preventDefault(); // Prevent the default form submission behavior
+        const form = event.target as HTMLFormElement; // Get the form element
+        const input = form.elements.namedItem("new-task") as HTMLInputElement; // Get the input element
+        if (!input.value.trim()) return; // If the input is empty, return, i.e, do nothing
+        onAdd(input.value.trim()); // Call the onAdd function with the input value
+        input.value = ""; // Clear the input value
     }
     return (
         <div className="">
